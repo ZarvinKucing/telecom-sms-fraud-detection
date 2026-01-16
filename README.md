@@ -175,5 +175,5 @@ visualization/tableau/
 
 ## 👤 Author
 
-**Zarvin PW**
-Internship (Kerja Praktik) Project – Telecom SMS Fraud Detection System
+**Zarvin**
+Internship Project – Telecom SMS Fraud Detection System
