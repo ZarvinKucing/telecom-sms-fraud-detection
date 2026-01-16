@@ -2,7 +2,7 @@
 
 This repository contains a **near real-time SMS fraud detection system** developed as part of an internship (Kerja Praktik). The system analyzes **SMS CDR (Call Detail Record) data**, focusing specifically on SMS traffic patterns to identify **suspicious or abnormal behavior** that may indicate fraud.
 
-The implementation uses a **modular, script-based pipeline**, where each processing stage is executed independently. There is **no single `main.py`**, and each script can be run separately based on the processing needs.
+The implementation uses a **modular, script-based pipeline**, where each processing stage is executed independently and each script can be run separately based on the processing needs.
 
 ---
 
