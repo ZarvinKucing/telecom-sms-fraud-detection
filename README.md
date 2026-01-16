@@ -1,40 +1,40 @@
-# 📊 SMS Fraud Detection System
+# 📊 Telecom SMS Fraud Detection System
 
-This repository contains a **near real-time SMS fraud detection system** developed as an internship (Kerja Praktik) project. The system focuses on detecting **suspicious SMS traffic patterns** that may indicate fraud activities such as artificial traffic generation or SMS abuse.
+This repository contains a **near real-time SMS fraud detection system** developed as part of an internship (Kerja Praktik). The system analyzes **SMS CDR (Call Detail Record) data**, focusing specifically on SMS traffic patterns to identify **suspicious or abnormal behavior** that may indicate fraud.
 
-The project is implemented as a **modular, script-based pipeline**, where each processing stage is executed independently.
+The implementation uses a **modular, script-based pipeline**, where each processing stage is executed independently. There is **no single `main.py`**, and each script can be run separately based on the processing needs.
 
 ---
 
 ## 🎯 Project Objectives
 
-* Analyze SMS CDR (Call Detail Record) data, focusing on SMS transactions
+* Analyze SMS CDR data (SMS only, not voice calls)
 * Perform automated data cleansing from raw CSV files
-* Detect suspicious SMS behavior based on traffic patterns
-* Store processed results into a database
+* Detect suspicious SMS traffic patterns
+* Store processed data into a relational database
 * Visualize fraud indicators using Tableau dashboards
 
 ---
 
-## 🧠 What is Considered Suspicious SMS Activity?
+## 🧠 What Is Considered Suspicious SMS Activity?
 
-Suspicious SMS activity does **not depend on message content**, but rather on **usage patterns** that deviate from normal behavior. Examples include:
+Suspicious SMS activity is identified based on **traffic patterns**, not message content. Examples include:
 
 * Extremely high SMS volume from a single sender within a short time window
-* Repetitive SMS delivery to the same destination
-* Sudden traffic spikes compared to historical activity
+* Repeated SMS delivery to the same destination number
+* Sudden traffic spikes compared to normal or historical behavior
 * SMS activity occurring at unusual hours (e.g., late night)
 * Newly observed senders generating abnormal traffic immediately
 
-Such patterns may indicate **artificial SMS traffic**, which can be exploited for financial gain through SMS billing or interconnection mechanisms.
+Such patterns may indicate **artificial or automated SMS traffic**, which can be exploited for financial gain through SMS billing or interconnection mechanisms.
 
 ---
 
 ## ⚙️ System Characteristics
 
 * **Processing type**: Near real-time (file-based monitoring)
-* **Input data**: SMS CDR CSV files (cleansed SMS records only)
-* **Execution model**: Script-based (each module runs independently)
+* **Input data**: SMS CDR CSV files
+* **Execution model**: Script-based (run per module)
 * **Database**: MySQL (managed via phpMyAdmin)
 * **Visualization**: Tableau
 
@@ -54,7 +54,7 @@ Such patterns may indicate **artificial SMS traffic**, which can be exploited fo
 ## 🏗️ Project Structure
 
 ```
-sms-fraud-detection-system/
+telecom-sms-fraud-detection/
 │
 ├── src/
 │   ├── parser/
@@ -73,11 +73,11 @@ sms-fraud-detection-system/
 ├── export/
 │   └── fraud_output_sample.csv
 │
-├── docs/
-│   ├── architecture_simplified.png
-│   ├── rule_concept.png
-│   ├── database_table.png
-│   └── tableau_preview.png
+├── src/docs/
+│   ├── System_Frames_Architecture.png
+│   ├── Fraud_Rule_Concept.png
+│   ├── Database_Table.png
+│   └── Tableau_Preview.png
 │
 ├── requirements.txt
 ├── .gitignore
@@ -90,15 +90,17 @@ sms-fraud-detection-system/
 
 1. SMS CDR CSV files are placed in the input directory
 2. Parsing script reads and cleanses SMS records
-3. Database tables are automatically created if not present
+3. Database tables are created automatically if not present
 4. Cleaned data is inserted into the database
 5. Fraud rules are applied to identify suspicious behavior
 6. Aggregated results are exported to CSV
-7. Tableau dashboard visualizes fraud patterns
+7. Tableau dashboard visualizes fraud patterns and trends
 
-### 📐 System Architecture
+---
 
-![System Architecture](docs/architecture_simplified.png)
+## 📐 System Architecture
+
+![System Architecture](src/docs/System_Frames_Architecture.png)
 
 ---
 
@@ -128,9 +130,9 @@ The fraud detection logic is **rule-based** and focuses on identifying abnormal 
 * Repeated sender–receiver interactions
 * Time-window based volume anomalies
 
-All rules and thresholds are **simplified and anonymized** for portfolio demonstration purposes.
+All rules and thresholds shown are **simplified and anonymized** for portfolio demonstration purposes.
 
-![Fraud Rule Concept](docs/rule_concept.png)
+![Fraud Rule Concept](src/docs/Fraud_Rule_Concept.png)
 
 ---
 
@@ -138,15 +140,15 @@ All rules and thresholds are **simplified and anonymized** for portfolio demonst
 
 Processed and cleansed SMS data is stored in a MySQL database. Tables are created automatically by the parsing script.
 
-![Database Table](docs/database_table.png)
+![Database Table](src/docs/Database_Table.png)
 
 ---
 
 ## 📊 Visualization (Tableau)
 
-Fraud indicators and traffic patterns are visualized using Tableau dashboards to support analysis and monitoring.
+Fraud indicators and traffic patterns are visualized using Tableau dashboards to support monitoring and analysis.
 
-![Tableau Dashboard](docs/tableau_preview.png)
+![Tableau Dashboard](src/docs/Tableau_Preview.png)
 
 Tableau workbook files are located in:
 
@@ -167,11 +169,11 @@ visualization/tableau/
 
 * SMS traffic monitoring and analysis
 * Fraud pattern detection demonstration
-* Internship / academic project portfolio
+* Internship / academic portfolio
 
 ---
 
 ## 👤 Author
 
-**ZarvinKucing*
-Internship Project – SMS Fraud Detection System
+**Zarvin PW**
+Internship (Kerja Praktik) Project – Telecom SMS Fraud Detection System
