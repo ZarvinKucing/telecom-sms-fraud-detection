@@ -71,7 +71,7 @@ telecom-sms-fraud-detection/
 │   └── sample_sms_cdr.csv     # Sample / dummy data
 │
 ├── export/
-│   └── fraud_output_sample.csv
+│   └── tdr_datamart_fraud.xlsx
 │
 ├── src/docs/
 │   ├── System_Frames_Architecture.png
